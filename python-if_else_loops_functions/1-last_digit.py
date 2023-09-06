@@ -10,8 +10,10 @@ if last_digit > 5:
     output = f"Last digit of {number} is {last_digit} and is greater than 5"
 elif last_digit == 0:
     output = f"Last digit of {number} is {last_digit} and is 0"
-else:
+elif last_digit < 6:
     output = f"Last digit of {number} is {last_digit} and is less than 6 and not 0"
+else:
+    output = f"boi you messed up"
 
 # Print the final output
 print(output)
