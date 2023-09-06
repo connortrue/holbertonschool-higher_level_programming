@@ -3,7 +3,10 @@ import random
 number = random.randint(-10000, 10000)
 
 # Get the last digit of the number
-last = number % 10
+if number >= 0:
+    last = number % 10
+else:
+    last = abs(number) % 10 * -1
 
 # Construct the output string based on the last digit
 if last > 5:
