@@ -12,4 +12,3 @@ def print_names():
 
 if __name__ == "__main__":
     print_names()
-
