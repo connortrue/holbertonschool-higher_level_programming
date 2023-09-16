@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-class Square:
-    """
-    Square is a class that defines a square.
+# 0-square.py
+# Connor True
+""" Define class Square."""
 
-    Attributes:
-        __size (int): size of a side of the square.
-    """
+
+class Square:
+    """This is an empty class to define a square."""
+
     pass
