@@ -36,9 +36,9 @@ class Square:
             ValueError: If the value is less than 0.
         """
         if not isinstance(value, int):
-            raise TypeError("size must be an integer")  # Raise an error if the value is not an integer
+            raise TypeError("size must be an integer")
         if value < 0:
-            raise ValueError("size must be >= 0")  # Raise an error if the value is less than 0
+            raise ValueError("size must be >= 0")
         self.__size = value  # Set the size of the square to the given value
 
     def area(self):
@@ -47,4 +47,4 @@ class Square:
         Returns:
             int: The area of the square.
         """
-        return self.__size ** 2  # Calculate the area of the square by squaring the size
+        return self.__size ** 2
