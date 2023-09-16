@@ -1,17 +1,23 @@
-#!/usr/bin/python3
+#!/usr/bin/env python
+"""
+This is a docstring for the Square class.
+"""
+
+
 class Square:
     """
-    Square is a class that defines a square.
-
-    Attributes:
-        __size (int): size of a side of the square.
+    This is a docstring for the Square class.
     """
 
     def __init__(self, size):
         """
-        The constructor for Square class.
+        This is a docstring for the __init__ method.
+        It initializes the size attribute of the Square object.
 
         Parameters:
-           size (int): The size of a side of the square.
+        size (int): The size of the square.
+
+        Returns:
+        None
         """
-        self.__size = size
+        self.size = size
