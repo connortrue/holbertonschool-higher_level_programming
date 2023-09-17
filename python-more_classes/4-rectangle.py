@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# 0-rectangle.py
+# 4-rectangle.py
 # Connor True <6676@holbertonstudents.com>
 class Rectangle:
     def __init__(self, width=0, height=0):
