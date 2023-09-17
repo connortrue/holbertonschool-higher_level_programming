@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 # 2-rectangle.py
 # Connor True <6676@holbertonstudents.com>
+"""Define a class - Rectangle."""
+
+
 class Rectangle:
     """
     Rectangle class defined by width and height
