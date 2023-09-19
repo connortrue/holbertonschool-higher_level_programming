@@ -3,6 +3,7 @@
 # Connor True
 """Doc"""
 
+
 def text_indentation(text):
     """
     Prints a text with 2 new lines after each of these characters: ., ? and :.
@@ -13,6 +14,7 @@ def text_indentation(text):
     Raises:
         TypeError: If text is not a string.
     """
+
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
@@ -23,5 +25,5 @@ def text_indentation(text):
             sentences.append(text[start:i+1].strip())
             start = i+1
     sentences.append(text[start:].strip())
-    
+
     print("\n\n".join(sentences), end="")
