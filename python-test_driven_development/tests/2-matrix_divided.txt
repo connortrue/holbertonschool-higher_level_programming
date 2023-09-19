@@ -21,7 +21,6 @@ TypeError: div must be a number
 Traceback (most recent call last):
 ...
 TypeError: matrix must be a matrix (list of lists) of integers/floats
->>> matrix_divided = __import__('2-matrix_divided').matrix_divided
 >>> matrix_divided([[1, 2], [3, "4"]], 2)
 Traceback (most recent call last):
 ...
