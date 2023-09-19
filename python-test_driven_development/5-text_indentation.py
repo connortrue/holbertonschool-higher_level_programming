@@ -24,4 +24,4 @@ def text_indentation(text):
             start = i+1
     sentences.append(text[start:].strip())
     
-    print("\n".join(sentences))
+    print("\n\n".join(sentences), end="")
