@@ -1,0 +1,12 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text_indentation("Hello, World! How are you?")
+Hello,
+
+World!
+
+How
+
+are
+
+you?
+
