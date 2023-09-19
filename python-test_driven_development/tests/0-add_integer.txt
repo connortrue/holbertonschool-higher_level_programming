@@ -1,30 +1,25 @@
-def test_add_integer():
-    """
-    Test the add_integer function with various integer and float inputs.
-    
-    This function asserts that the add_integer function correctly adds together
-    two numbers and returns their sum as an integer.
-    """
-    assert add_integer(1, 2) == 3
-    assert add_integer(100.5, 200.5) == 300
-    assert add_integer(-1, -1) == -2
-    assert add_integer(0, 0) == 0
-
-def test_add_integer_errors():
-    """
-    Test the add_integer function with invalid inputs.
-    
-    This function asserts that the add_integer function correctly raises a TypeError
-    when either of the inputs is not an integer or float.
-    """
-    try:
-        add_integer("100", 200)
-        assert False, "Expected a TypeError"
-    except TypeError as e:
-        assert str(e) == "a must be an integer"
-
-    try:
-        add_integer(100, "200")
-        assert False, "Expected a TypeError"
-    except TypeError as e:
-        assert str(e) == "b must be an integer"
+>>> add_integer = __import__('0-add_integer').add_integer
+>>> add_integer(22, 52)
+74
+>>> add_integer(1)
+99
+>>> add_integer(22.1, 28.2)
+50
+>>> add_integer(-20, -25)
+-45
+>>> add_integer(60, -10)
+50
+>>> add_integer(5.2, -7.3)
+-2
+>>> add_integer(40.5, -20)
+20
+>>> add_integer(50, 10.7)
+60
+>>> add_integer(3, "Testing")
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+>>> add_integer("Testing", 3)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
