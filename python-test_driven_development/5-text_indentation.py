@@ -3,7 +3,6 @@
 # Connor True
 """Doc"""
 
-
 def text_indentation(text):
     """
     Prints a text with 2 new lines after each of these characters: ., ? and :.
@@ -16,8 +15,13 @@ def text_indentation(text):
     """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
-    text = text.replace(" ", "")
-    for char in text:
-        print(char, end='')
+
+    sentences = []
+    start = 0
+    for i, char in enumerate(text):
         if char in ['.', '?', ':']:
-            print("\n")
+            sentences.append(text[start:i+1].strip())
+            start = i+1
+    sentences.append(text[start:].strip())
+    
+    print("\n\n".join(sentences))
