@@ -1,12 +1,54 @@
->>> obj = BaseGeometry()
->>> obj.area()
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> base_geo = BaseGeometry()
+>>> type(base_geo)
+<class '7-base_geometry.BaseGeometry'>
+
+>>> base_geo.area()
 Traceback (most recent call last):
-    ...
 Exception: area() is not implemented
 
->>> obj = BaseGeometry()
->>> obj.integer_validator("myVar", 5)
->>> obj.integer_validator("myVar", -1)
+>>> base_geo.integer_validator("valid number", 1)
+
+>>> base_geo.integer_validator("invalid number", "number")
 Traceback (most recent call last):
-	...
-ValueError: myVar must be greater than 0
+TypeError: invalid number must be an integer
+
+>>> base_geo.integer_validator("invalid", -1)
+Traceback (most recent call last):
+ValueError: invalid must be greater than 0
+
+>>> base_geo.integer_validator("invalid", 0)
+Traceback (most recent call last):
+ValueError: It must be greater than 0
+
+>>> base_geo.integer_validator("invalid", True)
+Traceback (most recent call last):
+TypeError: still must be an integer
+
+>>> base_geo.integer_validator("invalid", (1,))
+Traceback (most recent call last):
+TypeError: even tuples must be an integer
+
+>>> base_geo.integer_validator("invalid", [1])
+Traceback (most recent call last):
+TypeError: I said it must be an integer
+
+>>> base_geo.integer_validator("invalid", {1, 2})
+Traceback (most recent call last):
+TypeError: again, it must be an integer
+
+>>> base_geo.integer_validator("invalid", None)
+Traceback (most recent call last):
+TypeError: one last time, it must be an integer
+
+>>> base_geo.integer_validator()
+Traceback (most recent call last):
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+>>> base_geo.integer_validator("Nothing")
+Traceback (most recent call last):
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+>>> base_geo = BaseGeometry(None)
+Traceback (most recent call last):
+TypeError: BaseGeometry() takes no arguments
