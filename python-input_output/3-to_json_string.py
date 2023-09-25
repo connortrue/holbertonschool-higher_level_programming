@@ -14,6 +14,7 @@ def to_json_string(my_obj):
         A JSON string that represents the Python object.
 
     Note:
-        This function does not handle exceptions if the object can't be serialized.
+        This function does not handle exceptions if the object can't be
+        serialized.
     """
     return json.dumps(my_obj)
