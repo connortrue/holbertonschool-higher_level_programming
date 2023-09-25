@@ -13,8 +13,14 @@ class Rectangle(BaseGeometry):
     def area(self):
         return self.__width * self.__height
 
-    def __str__(self):
-        return "[Rectangle] {0}/{1}".format(self.__width, self.__height)
-
     def __repr__(self):
-        return self.__str__()
+        str_rectangle = "[" + str(self.__class__.__name__)
+        str_rectangle += "] " + str(self.__width)
+        str_rectangle += "/" + str(self.__height)
+        return str_rectangle
+
+    def __str__(self):
+        str_rectangle = "[" + str(self.__class__.__name__)
+        str_rectangle += "] " + str(self.__width)
+        str_rectangle += "/" + str(self.__height)
+        return str_rectangle
