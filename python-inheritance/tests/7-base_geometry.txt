@@ -1,0 +1,12 @@
+>>> obj = BaseGeometry()
+>>> obj.area()
+Traceback (most recent call last):
+    ...
+Exception: area() is not implemented
+
+>>> obj = BaseGeometry()
+>>> obj.integer_validator("myVar", 5)
+>>> obj.integer_validator("myVar", -1)
+Traceback (most recent call last):
+	...
+ValueError: myVar must be greater than 0
