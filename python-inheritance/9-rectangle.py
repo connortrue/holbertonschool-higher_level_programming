@@ -7,8 +7,10 @@ class Rectangle(BaseGeometry):
     """Doc"""
 
     def __init__(self, width, height):
-        self.__width = self.integer_validator(width)
-        self.__height = self.integer_validator(height)
+        self.integer_validator("width", width)
+        self.width = width
+        self.integer_validator("height", height)
+        self.__height = height
 
     def area(self):
         return self.__width * self.__height
