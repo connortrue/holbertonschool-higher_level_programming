@@ -8,5 +8,4 @@ class MyList(list):
     def print_sorted(self):
         """Doc"""
 
-        for i in sorted(self):
-            print(i)
+        print(sorted(self))
