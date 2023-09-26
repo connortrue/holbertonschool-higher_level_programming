@@ -7,22 +7,16 @@ class Rectangle(BaseGeometry):
     """Doc"""
 
     def __init__(self, width, height):
-        self.integer_validator("width", width)
-        self.width = width
-        self.integer_validator("height", height)
-        self.__height = height
-
-    def area(self):
-        return self.__width * self.__height
-
-    def __repr__(self):
-        str_rectangle = "[" + str(self.__class__.__name__)
-        str_rectangle += "] " + str(self.__width)
-        str_rectangle += "/" + str(self.__height)
-        return str_rectangle
+        """Doc"""
+        if super().integer_validator("width", width):
+            self.__width = width
+        if super().integer_validator("height", height):
+            self.__height = height
 
     def __str__(self):
-        str_rectangle = "[" + str(self.__class__.__name__)
-        str_rectangle += "] " + str(self.__width)
-        str_rectangle += "/" + str(self.__height)
-        return str_rectangle
+        """Doc"""
+        return "[Rectangle] {}/{}".format(self.__width, self.__height)
+
+    def area(self):
+        """Doc"""
+        return self.__width * self.__height
