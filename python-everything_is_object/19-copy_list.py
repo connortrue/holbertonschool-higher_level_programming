@@ -15,4 +15,4 @@ def copy_list(a_list):
     Note:
     This function creates a shallow copy of the list. If the original list contains mutable objects and those objects are changed, those changes will be reflected in the copied list.
     """
-    return a_list[:]
+    return list(a_list)
