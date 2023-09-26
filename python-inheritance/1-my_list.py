@@ -6,6 +6,4 @@ class MyList(list):
     """Doc"""
 
     def print_sorted(self):
-        """Doc"""
-
-        print(sorted(self))
+        print(sorted(list(self)))
