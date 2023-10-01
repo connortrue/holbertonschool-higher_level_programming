@@ -170,3 +170,16 @@ class Rectangle(Base):
         """
         for i in range(self.height):
             print(' ' * self.x + '#' * self.width)
+
+    def update(self, *args):
+        """
+        Updates the rectangle with new values for id, width, height, x, and y.
+
+        Parameters:
+        args (tuple): A tuple of new values for id, width, height, x, and y.
+        """
+        self.id = args[0]
+        self.width = args[1]
+        self.height = args[2]
+        self.x = args[3]
+        self.y = args[4]
