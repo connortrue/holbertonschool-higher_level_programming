@@ -1,12 +1,13 @@
 #!/usr/bin/python3
 """This is documentation for a class project. Please don't read too much into
 all of this, I'm only on month one of python training here."""
+from models.base import Base
 
 
 class Rectangle(Base):
     """
-    This class represents a rectangle. It inherits from the Base class and has 
-    private attributes for width, height, x, and y, each with its own getter 
+    This class represents a rectangle. It inherits from the Base class and has
+    private attributes for width, height, x, and y, each with its own getter
     and setter.
     """
 
@@ -19,7 +20,7 @@ class Rectangle(Base):
         height (int): The height of the rectangle.
         x (int, optional): The x-coordinate of the rectangle. Default is 0.
         y (int, optional): The y-coordinate of the rectangle. Default is 0.
-        id (int, optional): The id of the rectangle. If not provided, it 
+        id (int, optional): The id of the rectangle. If not provided, it
         will be incremented and assigned automatically.
         """
         super().__init__(id)
