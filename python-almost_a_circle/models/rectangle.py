@@ -165,5 +165,5 @@ class Rectangle(Base):
         Returns:
         str: A string representation of the rectangle.
         """
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - \
-            {self.width}/{self.height}"
+        return "[Rectangle] ({}) {}/{} - \
+            {}/{}".format(self.id, self.x, self.y, self.width, self.height)
