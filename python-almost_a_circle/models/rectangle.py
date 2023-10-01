@@ -10,6 +10,7 @@ class Rectangle(Base):
     It has private attributes for width, height, x, and y, each with its own
     getter and setter.
     """
+
     def __init__(self, width, height, x=0, y=0, id=None):
         """
         Constructor method for the Rectangle class.
