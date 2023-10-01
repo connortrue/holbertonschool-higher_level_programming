@@ -150,13 +150,6 @@ class Rectangle(Base):
         """
         return self.__width * self.__height
 
-    def display(self):
-        """
-        Prints the rectangle to stdout using the character #.
-        """
-        for _ in range(self.height):
-            print('#' * self.width)
-
     def __str__(self):
         """
         Returns a string representation of the rectangle in the format
@@ -169,3 +162,11 @@ class Rectangle(Base):
                                                         self.x, self.y,
                                                         self.width,
                                                         self.height))
+
+    def display(self):
+        """
+        Prints the rectangle to stdout using the character #, taking care of
+        x and y.
+        """
+        for i in range(self.height):
+            print(' ' * self.x + '#' * self.width)
