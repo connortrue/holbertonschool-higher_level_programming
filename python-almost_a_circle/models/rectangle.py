@@ -8,7 +8,7 @@ class Rectangle(Base):
     """
     This class represents a rectangle. It inherits from the Base class and has
     private attributes for width, height, x, and y, each with its own getter
-    and setter.
+    and setter. It also includes validation for the setter methods.
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -20,8 +20,8 @@ class Rectangle(Base):
         height (int): The height of the rectangle.
         x (int, optional): The x-coordinate of the rectangle. Default is 0.
         y (int, optional): The y-coordinate of the rectangle. Default is 0.
-        id (int, optional): The id of the rectangle. If not provided, it
-        will be incremented and assigned automatically.
+        id (int, optional): The id of the rectangle. If not provided, it will
+        be incremented and assigned automatically.
         """
         super().__init__(id)
         self.__width = width
@@ -42,11 +42,19 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """
-        Setter for the width attribute.
+        Setter for the width attribute with validation.
 
         Parameters:
         value (int): The new width of the rectangle.
+
+        Raises:
+        TypeError: If the input is not an integer.
+        ValueError: If the input is less than or equal to 0.
         """
+        if not isinstance(value, int):
+            raise TypeError("width must be an integer")
+        if value <= 0:
+            raise ValueError("width must be > 0")
         self.__width = value
 
     @property
@@ -62,11 +70,19 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """
-        Setter for the height attribute.
+        Setter for the height attribute with validation.
 
         Parameters:
         value (int): The new height of the rectangle.
+
+        Raises:
+        TypeError: If the input is not an integer.
+        ValueError: If the input is less than or equal to 0.
         """
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
+        if value <= 0:
+            raise ValueError("height must be > 0")
         self.__height = value
 
     @property
@@ -82,11 +98,19 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """
-        Setter for the x attribute.
+        Setter for the x attribute with validation.
 
         Parameters:
         value (int): The new x-coordinate of the rectangle.
+
+        Raises:
+        TypeError: If the input is not an integer.
+        ValueError: If the input is less than 0.
         """
+        if not isinstance(value, int):
+            raise TypeError("x must be an integer")
+        if value < 0:
+            raise ValueError("x must be >= 0")
         self.__x = value
 
     @property
@@ -102,9 +126,17 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """
-        Setter for the y attribute.
+        Setter for the y attribute with validation.
 
         Parameters:
         value (int): The new y-coordinate of the rectangle.
+
+        Raises:
+        TypeError: If the input is not an integer.
+        ValueError: If the input is less than 0.
         """
+        if not isinstance(value, int):
+            raise TypeError("y must be an integer")
+        if value < 0:
+            raise ValueError("y must be >= 0")
         self.__y = value
