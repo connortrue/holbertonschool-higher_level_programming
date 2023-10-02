@@ -83,3 +83,17 @@ class Square(Rectangle):
                 setattr(self, key, value)
         else:
             raise ValueError("No arguments provided")
+
+    def to_dictionary(self):
+        """
+        Returns a dictionary representation of the square.
+
+        Returns:
+        dict: A dictionary that contains the id, size, x, and y of the square.
+        """
+        return {
+            'id': self.id,
+            'size': self.size,
+            'x': self.x,
+            'y': self.y,
+        }
