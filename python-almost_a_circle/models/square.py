@@ -61,3 +61,25 @@ class Square(Rectangle):
         """
         return "[Square] ({}) {}/{} - {}".format(self.id, self.x,
                                                  self.y, self.width)
+
+    def update(self, *args, **kwargs):
+        """
+        Update method for the Square class.
+
+        Parameters:
+        *args (tuple): A tuple of arguments.
+        **kwargs (dict): A dictionary of keyword arguments.
+
+        Returns:
+        None
+
+        Raises:
+        ValueError: If the number of arguments is not 4.
+        """
+        if args:
+            self.id, self.size, self.x, self.y = args
+        elif kwargs:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+        else:
+            raise ValueError("No arguments provided")
