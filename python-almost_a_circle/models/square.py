@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Doc"""
+"""This is documentation for a class project. Please don't read too much into
+all of this, I'm only on month one of python training here."""
 from models.rectangle import Rectangle
 
 
