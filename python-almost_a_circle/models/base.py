@@ -2,6 +2,7 @@
 """This is documentation for a class project. Please don't read too much into
 all of this, I'm only on month one of python training here."""
 import json
+import os
 
 
 class Base:
@@ -102,3 +103,21 @@ class Base:
 
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        Returns a list of instances.
+
+        Returns:
+        list: A list of instances. If the file doesn't exist, return an empty
+        list.
+        """
+        filename = cls.__name__ + ".json"
+        if not os.path.exists(filename):
+            return []
+
+        with open(filename, 'r') as file:
+            list_dicts = cls.from_json_string(file.read())
+
+        return [cls.create(**dict_obj) for dict_obj in list_dicts]
