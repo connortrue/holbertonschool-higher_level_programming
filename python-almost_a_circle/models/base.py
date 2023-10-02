@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """This is documentation for a class project. Please don't read too much into
 all of this, I'm only on month one of python training here."""
+import json
 
 
 class Base:
@@ -25,3 +26,25 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        """
+        Returns the JSON string representation of list_dictionaries.
+
+        Parameters:
+        list_dictionaries (list): A list of dictionaries.
+
+        Returns:
+        str: A JSON string that represents the list of dictionaries.
+
+        Raises:
+        TypeError: If list_dictionaries is not a list.
+        """
+        if not isinstance(list_dictionaries, list):
+            raise TypeError("list_dictionaries must be a list")
+
+        if not list_dictionaries:
+            return "[]"
+
+        return json.dumps(list_dictionaries)
