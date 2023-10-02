@@ -22,6 +22,35 @@ class Square(Rectangle):
         """
         super().__init__(size, size, x, y, id)
 
+    @property
+    def size(self):
+        """
+        Getter for the size attribute.
+
+        Returns:
+        int: The size of the square.
+        """
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        """
+        Setter for the size attribute with validation.
+
+        Parameters:
+        value (int): The new size of the square.
+
+        Raises:
+        TypeError: If the input is not an integer.
+        ValueError: If the input is less than or equal to 0.
+        """
+        if not isinstance(value, int):
+            raise TypeError("size must be an integer")
+        if value <= 0:
+            raise ValueError("size must be > 0")
+        self.width = value
+        self.height = value
+
     def __str__(self):
         """
         Overloaded method that returns a string representation of the square.
