@@ -181,8 +181,6 @@ class Rectangle(Base):
         y.
         """
         if args:
-            if arg[0] == None:
-                self.__init__(self.width, self.height, self.x, self.y)
             self.id = args[0]
             self.width = args[1]
             self.height = args[2]
