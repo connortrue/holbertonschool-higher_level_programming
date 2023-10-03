@@ -189,8 +189,6 @@ class Rectangle(Base):
             self.x = args[3]
             self.y = args[4]
         else:
-            if kwargs.get('id') is None:
-                self.__init__(self.width, self.height, self.x, self.y)
             self.id = kwargs.get('id', self.id)
             self.width = kwargs.get('width', self.width)
             self.height = kwargs.get('height', self.height)
