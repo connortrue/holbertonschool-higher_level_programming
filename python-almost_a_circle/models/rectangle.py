@@ -169,7 +169,9 @@ class Rectangle(Base):
         x and y.
         """
         for i in range(self.height):
-            print(' ' * self.x + '#' * self.width)
+            for j in range(self.width):
+                print("#", end="")
+            print()
 
     def update(self, *args, **kwargs):
         """
