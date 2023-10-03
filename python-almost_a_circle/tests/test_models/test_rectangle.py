@@ -6,6 +6,9 @@ from models.rectangle import Rectangle
 
 
 class TestRectangle(unittest.TestCase):
+    """These are tests for the rectangle class. I don't know how much text you
+    really need for a doc but I want at least two lines."""
+
     def setUp(self):
         """Set up for the tests."""
         self.rect1 = Rectangle(5, 4)

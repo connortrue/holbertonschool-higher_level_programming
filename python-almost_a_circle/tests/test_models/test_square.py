@@ -6,6 +6,9 @@ from models.square import Square
 
 
 class TestSquare(unittest.TestCase):
+    """This is unit tests for the square case. I don't know how much more
+    documentation you require. Beep Boop."""
+
     def setUp(self):
         """Set up for the tests."""
         self.square1 = Square(5)

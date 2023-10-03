@@ -6,6 +6,9 @@ from models.base import Base
 
 
 class TestBase(unittest.TestCase):
+    """These are unit tests for the base class. Not sure how much
+    documentation is required so I'll stop here."""
+
     def setUp(self):
         """Set up for the tests."""
         self.base1 = Base()
@@ -46,5 +49,4 @@ class TestBase(unittest.TestCase):
 
 
 if __name__ == '__main__':
-
     unittest.main()
