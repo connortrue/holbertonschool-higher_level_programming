@@ -180,18 +180,19 @@ class Rectangle(Base):
         kwargs (dict): A dictionary of new values for id, width, height, x, and
         y.
         """
+        attributes = ['id', 'width', 'height', 'x', 'y']
         if args:
-            self.id = args[0]
-            self.width = args[1]
-            self.height = args[2]
-            self.x = args[3]
-            self.y = args[4]
-        else:
-            self.id = kwargs.get('id', self.id)
-            self.width = kwargs.get('width', self.width)
-            self.height = kwargs.get('height', self.height)
-            self.x = kwargs.get('x', self.x)
-            self.y = kwargs.get('y', self.y)
+            if len(args) != 5:
+                raise ValueError("Expected 5 positional arguments: id, width,\
+                                  height, x, y")
+            for i, arg in enumerate(args):
+                setattr(self, attributes[i], arg)
+        if kwargs:
+            for key, value in kwargs.items():
+                if key in attributes:
+                    setattr(self, key, value)
+                else:
+                    print("Invalid attribute: {}".format(key))
 
     def to_dictionary(self):
         """
