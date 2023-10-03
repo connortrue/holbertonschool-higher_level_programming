@@ -170,7 +170,7 @@ class Rectangle(Base):
         """
         for i in range(self.height):
             print('\n' * self.y, end="")
-            print(' ' * self.x)
+            print(' ' * self.x, end="")
             for j in range(self.width):
                 print("#", end="")
             print()
