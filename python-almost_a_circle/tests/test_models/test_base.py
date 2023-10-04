@@ -2,24 +2,23 @@
 """This is documentation for a class project. Please don't read too much into
 all of this, I'm only on month one of python training here."""
 import unittest
+import json
 from models.base import Base
+from models.rectangle import Rectangle
 
 
 class TestBase(unittest.TestCase):
     """These are unit tests for the base class. Not sure how much
     documentation is required so I'll stop here."""
 
-    def test_setUp(self):
-        """Set up for the tests."""
-        self.base1 = Base()
-        self.base2 = Base(12)
-        self.base3 = Base()
-
     def test_id_assignment(self):
         """Test for id assignment."""
-        self.assertEqual(self.base1.id, 1)
-        self.assertEqual(self.base2.id, 12)
-        self.assertEqual(self.base3.id, 2)
+        base1 = Base()
+        base2 = Base(12)
+        base3 = Base()
+        self.assertEqual(base1.id, 1)
+        self.assertEqual(base2.id, 12)
+        self.assertEqual(base3.id, 2)
 
     def test_to_json_string(self):
         """Test for to_json_string method."""
@@ -45,7 +44,8 @@ class TestBase(unittest.TestCase):
         r2 = Rectangle(2, 4)
         Rectangle.save_to_file([r1, r2])
         with open("Rectangle.json", "r") as file:
-            self.assertEqual(json.dumps([r1.to_dictionary(), r2.to_dictionary()]), file.read())
+            self.assertEqual(json.dumps([r1.to_dictionary(),
+                                        r2.to_dictionary()]), file.read())
 
     def test_load_from_file(self):
         """Test for load_from_file method."""
