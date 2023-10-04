@@ -9,7 +9,7 @@ class TestSquare(unittest.TestCase):
     """This is unit tests for the square case. I don't know how much more
     documentation you require. Beep Boop."""
 
-    def setUp(self):
+    def test_setUp(self):
         """Set up for the tests."""
         self.square1 = Square(5)
         self.square2 = Square(2, 1, 3, 12)

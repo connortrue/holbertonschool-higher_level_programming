@@ -9,7 +9,7 @@ class TestBase(unittest.TestCase):
     """These are unit tests for the base class. Not sure how much
     documentation is required so I'll stop here."""
 
-    def setUp(self):
+    def test_setUp(self):
         """Set up for the tests."""
         self.base1 = Base()
         self.base2 = Base(12)
