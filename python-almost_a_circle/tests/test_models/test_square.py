@@ -49,6 +49,18 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(square1.to_dictionary(),
                          {'id': 1, 'size': 5, 'x': 0, 'y': 0})
 
+    def test_size_property(self):
+        """Test for size property."""
+        square = Square(5)
+        self.assertEqual(square.size, 5)
+
+    def test_update_kwargs(self):
+        """Test for update method with keyword arguments."""
+        square = Square(5)
+        square.update(size=7, id=89)
+        self.assertEqual(square.size, 7)
+        self.assertEqual(square.id, 89)
+
 
 if __name__ == '__main__':
     unittest.main()

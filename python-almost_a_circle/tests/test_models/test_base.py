@@ -57,6 +57,17 @@ class TestBase(unittest.TestCase):
         self.assertEqual(r1.__dict__, load_rectangles[0].__dict__)
         self.assertEqual(r2.__dict__, load_rectangles[1].__dict__)
 
+    def test_save_to_file_None(self):
+        """Test for save_to_file method with None."""
+        Base.save_to_file(None)
+        with open("Base.json", "r") as file:
+            self.assertEqual('[]', file.read())
+
+    def test_load_from_file_empty(self):
+        """Test for load_from_file method with empty file."""
+        open("Base.json", 'w').close()
+        self.assertEqual([], Base.load_from_file())
+
 
 if __name__ == '__main__':
     unittest.main()

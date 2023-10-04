@@ -58,6 +58,16 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r1.__dict__, load_rectangles[0].__dict__)
         self.assertEqual(r2.__dict__, load_rectangles[1].__dict__)
 
+    def test_width_property(self):
+        """Test for width property."""
+        rect = Rectangle(5, 4)
+        self.assertEqual(rect.width, 5)
+
+    def test_height_property(self):
+        """Test for height property."""
+        rect = Rectangle(5, 4)
+        self.assertEqual(rect.height, 4)
+
 
 if __name__ == '__main__':
     unittest.main()
