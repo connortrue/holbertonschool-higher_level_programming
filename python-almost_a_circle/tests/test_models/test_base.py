@@ -41,11 +41,21 @@ class TestBase(unittest.TestCase):
 
     def test_save_to_file(self):
         """Test for save_to_file method."""
-        pass
+        r1 = Rectangle(10, 7, 2, 8)
+        r2 = Rectangle(2, 4)
+        Rectangle.save_to_file([r1, r2])
+        with open("Rectangle.json", "r") as file:
+            self.assertEqual(json.dumps([r1.to_dictionary(), r2.to_dictionary()]), file.read())
 
     def test_load_from_file(self):
         """Test for load_from_file method."""
-        pass
+        r1 = Rectangle(10, 7, 2, 8)
+        r2 = Rectangle(2, 4)
+        Rectangle.save_to_file([r1, r2])
+
+        load_rectangles = Rectangle.load_from_file()
+        self.assertEqual(r1.__dict__, load_rectangles[0].__dict__)
+        self.assertEqual(r2.__dict__, load_rectangles[1].__dict__)
 
 
 if __name__ == '__main__':
