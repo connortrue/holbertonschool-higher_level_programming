@@ -10,6 +10,7 @@ class Rectangle {
     }
   }
 
+  print () {
     if (this.width === null || this.height === null) {
       return 'Empty object';
     } else {
