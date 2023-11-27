@@ -1,17 +1,17 @@
 #!/usr/bin/node
 const findSecondLargest = (...args) => {
-    if (args.length <= 1) {
-      console.log(0);
-      return;
-    }
-  
-    const numbers = args.map(Number);
-    const sortedNumbers = numbers.sort((a, b) => b - a);
-    const secondLargest = sortedNumbers[1];
-  
-    console.log(secondLargest);
-  };
-  
-  findSecondLargest(5, 2, 8, 10, 3);
-  findSecondLargest(1);
-  findSecondLargest();
+  if (args.length <= 1) {
+    console.log(0);
+    return;
+  }
+
+  const numbers = args.map(Number);
+  const sortedNumbers = numbers.sort((a, b) => b - a);
+  const secondLargest = sortedNumbers[1];
+
+  console.log(secondLargest);
+};
+
+findSecondLargest(5, 2, 8, 10, 3);
+findSecondLargest(1);
+findSecondLargest();
