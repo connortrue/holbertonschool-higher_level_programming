@@ -11,7 +11,3 @@ const findSecondLargest = (...args) => {
 
   console.log(secondLargest);
 };
-
-findSecondLargest(5, 2, 8, 10, 3);
-findSecondLargest(1);
-findSecondLargest();
