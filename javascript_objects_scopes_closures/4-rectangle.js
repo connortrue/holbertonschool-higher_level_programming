@@ -13,11 +13,6 @@ module.exports = class Rectangle {
   }
 
   print () {
-    // If width and height are both 0, do not print anything
-    if (this.width === 0 || this.height === 0) {
-      return;
-    }
-
     // Print the rectangle using 'X' character
     for (let i = 0; i < this.height; i++) {
       let line = '';
