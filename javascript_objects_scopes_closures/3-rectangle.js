@@ -9,11 +9,11 @@ module.exports = class Rectangle {
 
   print () {
     for (let i = 0; i < this.height; i++) {
-      let currLine = '';
+      let line = '';
       for (let j = 0; j < this.width; j++) {
-        currLine += 'X';
+        line += 'X';
       }
-      console.log(currLine);
+      console.log(line);
     }
   }
 };
