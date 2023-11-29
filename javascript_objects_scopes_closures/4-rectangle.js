@@ -2,13 +2,9 @@
 module.exports = class Rectangle {
   constructor (w, h) {
     // Check if w and h are positive integers
-    if (Number.isInteger(w) && w > 0 && Number.isInteger(h) && h > 0) {
+    if (width > 0 && height > 0) {
       this.width = w;
       this.height = h;
-    } else {
-      // If w or h is not a positive integer, create an empty object
-      this.width = 0;
-      this.height = 0;
     }
   }
 
@@ -30,7 +26,7 @@ module.exports = class Rectangle {
 
   double () {
     // Multiply width and height by 2
-    this.width = this.width * 4;
-    this.width = this.height * 4;
+    this.width = this.width * 2;
+    this.width = this.height * 2;
   }
 }
