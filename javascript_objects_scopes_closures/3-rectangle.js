@@ -1,24 +1,19 @@
 #!/usr/bin/node
-class Rectangle {
-  constructor (w, h) {
-    if (w <= 0 || h <= 0 || !Number.isInteger(w) || !Number.isInteger(h)) {
-      // If width or height is not a positive integer or equal to 0, create an empty object
-      this.width = null;
-      this.height = null;
-    } else {
-      // Initialize the instance attributes width and height
-      this.width = w;
-      this.height = h;
+module.exports = class Rectangle {
+  constructor (width, height) {
+    if (width > 0 && height > 0) {
+      this.width = width;
+      this.height = height;
     }
   }
 
   print () {
-    if (this.width === null || this.height === null) {
-      console.log('Empty object');
-    } else {
-      for (let i = 0; i < this.height; i++) {
-        console.log('X'.repeat(this.width));
+    for (let i = 0; i < this.height; i++) {
+      let currLine = '';
+      for (let j = 0; j < this.width; j++) {
+        currLine += 'X';
       }
+      console.log(currLine);
     }
   }
-}
+};
