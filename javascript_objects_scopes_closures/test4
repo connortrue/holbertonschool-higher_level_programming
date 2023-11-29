@@ -1,7 +1,0 @@
-#!/usr/bin/node
-const Rectangle = require('./4-rectangle');
-
-const r1 = new Rectangle(3, 5);
-r1.print();
-r1.double();
-r1.print();
