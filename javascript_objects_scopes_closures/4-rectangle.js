@@ -1,5 +1,5 @@
 #!/usr/bin/node
-class Rectangle {
+module.exports = class Rectangle {
   constructor (w, h) {
     // Check if w and h are positive integers
     if (Number.isInteger(w) && w > 0 && Number.isInteger(h) && h > 0) {
