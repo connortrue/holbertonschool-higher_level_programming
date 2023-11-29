@@ -1,13 +1,20 @@
 #!/usr/bin/node
-const findSecondLargest = (...args) => {
-  if (args.length <= 1) {
-    console.log(0);
-    return;
+if (process.argv.length < 3) {
+  console.log(0);
+  process.exit(0);
+}
+
+const numbers = process.argv.slice(2).map(Number);
+
+let max = -Infinity; let secondMax = -Infinity;
+
+for (const num of numbers) {
+  if (num > max) {
+    secondMax = max;
+    max = num;
+  } else if (num > secondMax && num < max) {
+    secondMax = num;
   }
+}
 
-  const numbers = args.map(Number);
-  const sortedNumbers = numbers.sort((a, b) => b - a);
-  const secondLargest = sortedNumbers[1];
-
-  console.log(secondLargest);
-};
+console.log(secondMax === -Infinity ? 0 : secondMax);
