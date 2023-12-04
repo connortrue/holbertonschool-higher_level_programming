@@ -26,7 +26,7 @@ request(url, function (error, response, body) {
 
       // Print the number of tasks completed by each user
       for (let userId in completedTasks) {
-          console.log(`User ${userId} has completed ${completedTasks[userId]} tasks.`);
+          console.log(completedTasks);
       }
   } else {
       console.log('Error:', error);
