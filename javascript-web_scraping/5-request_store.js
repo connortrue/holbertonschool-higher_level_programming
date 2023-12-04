@@ -12,7 +12,6 @@ request(url, function (error, response, body) {
        // Write the response body to the file
        fs.writeFile(filePath, body, { encoding: 'utf8' }, function (err) {
            if (err) throw err;
-           console.log('The file has been saved!');
        });
    } else {
        console.log('Error:', error);
