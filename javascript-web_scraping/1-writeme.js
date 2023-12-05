@@ -9,7 +9,5 @@ const contentToWrite = process.argv[3];
 fs.writeFile(filePath, contentToWrite, 'utf-8', (err) => {
   if (err) {
     console.error(err); // Print the error object if an error occurred during writing
-  } else {
-    console.log('The file has been saved!'); // Notify that the file has been successfully written
   }
 });

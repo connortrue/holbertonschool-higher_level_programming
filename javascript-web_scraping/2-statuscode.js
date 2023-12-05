@@ -1,5 +1,5 @@
 #!/usr/bin/node
-const request = require('<link>request</link>');
+const request = require('request');
 
 // Get the URL from the command line argument
 const url = process.argv[2];
