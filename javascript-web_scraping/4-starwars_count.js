@@ -15,7 +15,7 @@ request(apiUrl, (error, response, body) => {
     const filmsWithWedge = filmsData.results.filter(film =>
       film.characters.includes(`https://swapi-api.hbtn.io/api/people/${characterId}/`)
     );
-    console.log(`Number of movies where Wedge Antilles is present: ${filmsWithWedge.length}`);
+    console.log(`${filmsWithWedge.length}`);
   } else {
     console.error(`Error fetching movie data: ${error}`);
   }
