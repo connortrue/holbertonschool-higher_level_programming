@@ -10,12 +10,12 @@ const characterId = 18;
 // Make a GET request to the API endpoint
 request(apiUrl, (error, response, body) => {
   if (!error && response.statusCode === 200) {
-      const filmsData = JSON.parse(body);
-      // Filter the films where Wedge Antilles is present
-      const filmsWithWedge = filmsData.results.filter(film =>
-          film.characters.includes(`https://swapi-api.hbtn.io/api/people/${characterId}/`));
-      console.log(`${filmsWithWedge.length}`);
+    const filmsData = JSON.parse(body);
+    // Filter the films where Wedge Antilles is present
+    const filmsWithWedge = filmsData.results.filter(film =>
+      film.characters.includes(`https://swapi-api.hbtn.io/api/people/${characterId}/`));
+    console.log(`${filmsWithWedge.length}`);
   } else {
-      console.error(`Error fetching movie data: ${error}`);
+    console.error(`Error fetching movie data: ${error}`);
   }
 });
