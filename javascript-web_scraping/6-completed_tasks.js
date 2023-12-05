@@ -1,30 +1,31 @@
 #!/usr/bin/node
 const request = require('request');
 
-// API URL
-const url = 'https://jsonplaceholder.typicode.com/todos';
+function getCompletedTasks(url) {
+ return new Promise((resolve, reject) => {
+  url = process.argv[2];
+  request(url, (error, response, body) => {
+    if (error) {
+      reject(error);
+    } else {
+      const tasks = JSON.parse(body);
+      const userTasks = tasks.filter(task => task.completed);
+      const userCounts = {};
 
-// Make a GET request to the API URL
-request(url, function (error, response, body) {
- if (!error && response.statusCode == 200) {
-     // Parse the response body to JSON
-     const todos = JSON.parse(body);
+      userTasks.forEach(task => {
+        if (userCounts[task.userId]) {
+          userCounts[task.userId]++;
+        } else {
+          userCounts[task.userId] = 1;
+        }
+      });
 
-     // Create an object to store the number of tasks completed by each user
-     const completedTasks = {};
+      console.log(userCounts);
+      resolve(userCounts);
+    }
+  });
+ });
+}
 
-     // Iterate over the tasks
-     todos.forEach(function(todo) {
-         // If the task is completed and the user id is not already in the object, add it
-         if (todo.completed && !completedTasks[todo.userId]) {
-             completedTasks[todo.userId] = 1;
-         }
-     });
-
-     // Print the number of tasks completed by each user
-     console.log(completedTasks);
-     
- } else {
-     console.log('Error:', error);
- }
-});
+getCompletedTasks(process.argv[2])
+ .catch(error => console.error(error));
