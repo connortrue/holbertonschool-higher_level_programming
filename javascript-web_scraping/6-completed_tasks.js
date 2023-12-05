@@ -14,15 +14,15 @@ function getCompletedTasks (url) {
 
         userTasks.forEach(task => {
           if (userCounts[task.userId]) {
-              userCounts[task.userId]++;
+            userCounts[task.userId]++;
           } else {
-              userCounts[task.userId] = 1;
+            userCounts[task.userId] = 1;
           }
         });
 
         console.log(userCounts);
         resolve(userCounts);
-        }
+      }
     });
   });
 }
