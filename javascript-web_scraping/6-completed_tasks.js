@@ -13,11 +13,11 @@ function getCompletedTasks (url) {
         const userCounts = {};
 
         userTasks.forEach(task => {
-            if (userCounts[task.userId]) {
-                userCounts[task.userId]++;
-            } else {
-                userCounts[task.userId] = 1;
-            }
+          if (userCounts[task.userId]) {
+              userCounts[task.userId]++;
+          } else {
+              userCounts[task.userId] = 1;
+          }
         });
 
         console.log(userCounts);
